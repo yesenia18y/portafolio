@@ -1,0 +1,517 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- TemplateBeginEditable name="doctitle" -->
+<title>Documento sin título</title>
+<!-- TemplateEndEditable -->
+<!-- TemplateBeginEditable name="head" -->
+<!-- TemplateEndEditable -->
+<style type="text/css">
+<!--
+body {
+	font: 100%/1.4 Verdana, Arial, Helvetica, sans-serif;
+	background-color: #006666;
+	margin: 0;
+	padding: 0;
+	color: #000;
+}
+
+/* ~~ Selectores de elemento/etiqueta ~~ */
+ul, ol, dl { /* Debido a las diferencias existentes entre los navegadores, es recomendable no añadir relleno ni márgenes en las listas. Para lograr coherencia, puede especificar las cantidades deseadas aquí o en los elementos de lista (LI, DT, DD) que contienen. Recuerde que lo que haga aquí se aplicará en cascada en la lista .nav, a no ser que escriba un selector más específico. */
+	padding: 0;
+	margin: 0;
+}
+h1, h2, h3, h4, h5, h6, p {
+	margin-top: 0;	 /* la eliminación del margen superior resuelve un problema que origina que los márgenes escapen de la etiqueta div contenedora. El margen inferior restante lo mantendrá separado de los elementos de que le sigan. */
+	padding-right: 15px;
+	padding-left: 15px; /* la adición de relleno a los lados del elemento dentro de las divs, en lugar de en las divs propiamente dichas, elimina todas las matemáticas de modelo de cuadro. Una div anidada con relleno lateral también puede usarse como método alternativo. */
+	font-weight: bold;
+	font-size: 160%;
+	text-align: center;
+}
+a img { /* este selector elimina el borde azul predeterminado que se muestra en algunos navegadores alrededor de una imagen cuando está rodeada por un vínculo */
+	border: none;
+}
+
+/* ~~ La aplicación de estilo a los vínculos del sitio debe permanecer en este orden (incluido el grupo de selectores que crea el efecto hover -paso por encima-). ~~ */
+a:link {
+	color:#414958;
+	text-decoration: underline; /* a no ser que aplique estilos a los vínculos para que tengan un aspecto muy exclusivo, es recomendable proporcionar subrayados para facilitar una identificación visual rápida */
+}
+a:visited {
+	color: #4E5869;
+	text-decoration: underline;
+}
+a:hover, a:active, a:focus { /* este grupo de selectores proporcionará a un usuario que navegue mediante el teclado la misma experiencia de hover (paso por encima) que experimenta un usuario que emplea un ratón. */
+	text-decoration: none;
+}
+
+/* ~~ este contenedor rodea a todas las demás divs, lo que les asigna su anchura basada en porcentaje ~~ */
+.container {
+	width: 80%;
+	max-width: 1260px;/* puede que sea conveniente una anchura máxima (max-width) para evitar que este diseño sea demasiado ancho en un monitor grande. Esto mantiene una longitud de línea más legible. IE6 no respeta esta declaración. */
+	min-width: 780px;/* puede que sea conveniente una anchura mínima (min-width) para evitar que este diseño sea demasiado estrecho. Esto permite que la longitud de línea sea más legible en las columnas laterales. IE6 no respeta esta declaración. */
+	background-color: #FFF;
+	margin: 0 auto; /* el valor automático de los lados, unido a la anchura, centra el diseño. No es necesario si establece la anchura de .container en el 100%. */
+}
+
+/* ~~no se asigna una anchura al encabezado. Se extenderá por toda la anchura del diseño. Contiene un marcador de posición de imagen que debe sustituirse por su propio logotipo vinculado~~ */
+.header {
+	background-color: #6F7D94;
+}
+
+/* ~~ Esta es la información de diseño. ~~ 
+
+1) El relleno sólo se sitúa en la parte superior y/o inferior de la div. Los elementos situados dentro de esta div tienen relleno a los lados. Esto le ahorra las "matemáticas de modelo de cuadro". Recuerde que si añade relleno o borde lateral a la div propiamente dicha, éste se añadirá a la anchura que defina para crear la anchura *total*. También puede optar por eliminar el relleno del elemento en la div y colocar una segunda div dentro de ésta sin anchura y el relleno necesario para el diseño deseado.
+
+*/
+.content {
+	padding: 10px 0;
+}
+
+/* ~~ Este selector agrupado da espacio a las listas del área de .content ~~ */
+.content ul, .content ol { 
+	padding: 0 15px 15px 40px; /* este relleno reproduce en espejo el relleno derecho de la regla de encabezados y de párrafo incluida más arriba. El relleno se ha colocado en la parte inferior para que el espacio existente entre otros elementos de la lista y a la izquierda cree la sangría. Estos pueden ajustarse como se desee. */
+}
+
+/* ~~ El pie de página ~~ */
+.footer {
+	padding: 10px 0;
+	background-color: #6F7D94;
+}
+
+/* ~~ clases float/clear varias ~~ */
+.fltrt {  /* esta clase puede utilizarse para que un elemento flote en la parte derecha de la página. El elemento flotante debe preceder al elemento junto al que debe aparecer en la página. */
+	float: right;
+	margin-left: 8px;
+}
+.fltlft { /* esta clase puede utilizarse para que un elemento flote en la parte izquierda de la página. El elemento flotante debe preceder al elemento junto al que debe aparecer en la página. */
+	float: left;
+	margin-right: 8px;
+}
+.clearfloat { /* esta clase puede situarse en una <br /> o div vacía como elemento final tras la última div flotante (dentro de #container) si #footer se elimina o se saca fuera de #container */
+	clear:both;
+	height:0;
+	font-size: 1px;
+	line-height: 0px;
+}
+body,td,th {
+	color: #033;
+}
+#apDiv1 {
+	position: absolute;
+	left: 172px;
+	top: 1131px;
+	width: 839px;
+	height: 449px;
+	z-index: 1;
+}
+#apDiv2 {
+	position: absolute;
+	left: 197px;
+	top: 469px;
+	width: 813px;
+	height: 31px;
+	z-index: 1;
+}
+#apDiv3 {
+	position: absolute;
+	left: 187px;
+	top: 412px;
+	width: 813px;
+	height: 31px;
+	z-index: 1;
+}
+#apDiv4 {
+	position: absolute;
+	left: 155px;
+	top: 584px;
+	width: 847px;
+	height: 520px;
+	z-index: 2;
+}
+#apDiv5 {
+	position: absolute;
+	left: 259px;
+	top: 1844px;
+	width: 706px;
+	height: 420px;
+	z-index: 3;
+}
+#apDiv6 {
+	position: absolute;
+	left: 659px;
+	top: 1754px;
+	width: 304px;
+	height: 232px;
+	z-index: 4;
+}
+#apDiv7 {
+	position: absolute;
+	left: 280px;
+	top: 2568px;
+	width: 625px;
+	height: 322px;
+	z-index: 4;
+}
+#apDiv8 {
+	position: absolute;
+	left: 565px;
+	top: 3040px;
+	width: 173px;
+	height: 137px;
+	z-index: 5;
+}
+#apDiv9 {	position: absolute;
+	left: 525px;
+	top: 3133px;
+	width: 173px;
+	height: 129px;
+	z-index: 5;
+}
+#apDiv10 {
+	position: absolute;
+	left: 613px;
+	top: 4722px;
+	width: 191px;
+	height: 179px;
+	z-index: 6;
+}
+#apDiv11 {
+	position: absolute;
+	left: 383px;
+	top: 4987px;
+	width: 785px;
+	height: 581px;
+	z-index: 7;
+}
+#apDiv12 {
+	position: absolute;
+	left: 293px;
+	top: 6040px;
+	width: 738px;
+	height: 356px;
+	z-index: 8;
+}
+#apDiv13 {
+	position: absolute;
+	left: 198px;
+	top: 3702px;
+	width: 292px;
+	height: 272px;
+	z-index: 9;
+}
+#apDiv14 {
+	position: absolute;
+	left: 670px;
+	top: 3696px;
+	width: 332px;
+	height: 316px;
+	z-index: 10;
+}
+#apDiv15 {
+	position: absolute;
+	left: 394px;
+	top: 4142px;
+	width: 360px;
+	height: 250px;
+	z-index: 11;
+}
+#apDiv16 {
+	position: absolute;
+	left: 225px;
+	top: 6798px;
+	width: 621px;
+	height: 189px;
+	z-index: 12;
+}
+#apDiv17 {
+	position: absolute;
+	left: 909px;
+	top: 6750px;
+	width: 220px;
+	height: 194px;
+	z-index: 13;
+}
+-->
+</style>
+<script type="text/javascript">
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+
+function MM_swapImgRestore() { //v3.0
+  var i,x,a=document.MM_sr; for(i=0;a&&i<a.length&&(x=a[i])&&x.oSrc;i++) x.src=x.oSrc;
+}
+
+function MM_findObj(n, d) { //v4.01
+  var p,i,x;  if(!d) d=document; if((p=n.indexOf("?"))>0&&parent.frames.length) {
+    d=parent.frames[n.substring(p+1)].document; n=n.substring(0,p);}
+  if(!(x=d[n])&&d.all) x=d.all[n]; for (i=0;!x&&i<d.forms.length;i++) x=d.forms[i][n];
+  for(i=0;!x&&d.layers&&i<d.layers.length;i++) x=MM_findObj(n,d.layers[i].document);
+  if(!x && d.getElementById) x=d.getElementById(n); return x;
+}
+
+function MM_swapImage() { //v3.0
+  var i,j=0,x,a=MM_swapImage.arguments; document.MM_sr=new Array; for(i=0;i<(a.length-2);i+=3)
+   if ((x=MM_findObj(a[i]))!=null){document.MM_sr[j++]=x; if(!x.oSrc) x.oSrc=x.src; x.src=a[i+2];}
+}
+</script>
+</head>
+
+<body onload="MM_preloadImages('file:///C|/Users/yesen/Desktop/TODO/Nueva carpeta/Imagenes/1.png','file:///C|/Users/yesen/Desktop/TODO/Nueva carpeta/Imagenes/2.png','file:///C|/Users/yesen/Desktop/TODO/Nueva carpeta/Imagenes/3.png','file:///C|/Users/yesen/Desktop/TODO/Nueva carpeta/Imagenes/4.jpeg')">
+
+<div id="apDiv1">
+  <table width="803" height="438" border="1">
+    <tr>
+      <td width="382" height="228"><img src="file:///C|/Users/yesen/Desktop/TODO/Nueva carpeta/Imagenes/1.png" alt="img1" name="img1" width="382" height="224" id="img1" /></td>
+      <td width="405" colspan="10"><img src="file:///C|/Users/yesen/Desktop/TODO/Nueva carpeta/Imagenes/2.png" alt="img2" name="img2" width="405" height="244" id="img2" /></td>
+    </tr>
+    <tr>
+      <td height="202"><img src="file:///C|/Users/yesen/Desktop/TODO/Nueva carpeta/Imagenes/3.png" alt="img3" name="img3" width="383" height="233" id="img3" /></td>
+      <td colspan="10"><img src="file:///C|/Users/yesen/Desktop/TODO/Nueva carpeta/Imagenes/4.jpeg" alt="img4" name="img4" width="404" height="243" id="img4" /></td>
+    </tr>
+  </table>
+</div>
+<div id="apDiv4">
+  <table width="837" height="502" border="1">
+    <tr>
+      <td width="201" height="233"><img src="file:///C|/Users/yesen/Desktop/TODO/Nueva carpeta/Imagenes/WhatsApp Image 2019-06-17 at 2.09.53 PM.jpeg" width="411" height="231" alt="c" /></td>
+      <td width="620"><img src="file:///C|/Users/yesen/Desktop/TODO/Nueva carpeta/Imagenes/WhatsApp Image 2019-06-17 at 2.09.52 PM (1).jpeg" width="448" height="223" alt="a" /></td>
+    </tr>
+    <tr>
+      <td><img src="file:///C|/Users/yesen/Desktop/TODO/Nueva carpeta/Imagenes/WhatsApp Image 2019-06-17 at 2.09.54 PM.jpeg" width="409" height="264" alt="d" /></td>
+      <td><img src="file:///C|/Users/yesen/Desktop/TODO/Nueva carpeta/Imagenes/WhatsApp Image 2019-06-17 at 2.09.52 PM.jpeg" width="429" height="248" alt="b" /></td>
+    </tr>
+  </table>
+</div>
+<div id="apDiv5">
+  <p>MOSTRAR DIAPOSITIVA</p>
+  <p><a href="Presentación2.pdf"><img src="file:///C|/Users/yesen/Desktop/TODO/Nueva carpeta/Imagenes/diapos.png" alt="" width="141" height="116" /></a> Equipo</p>
+  <p><a href="FOTOGRAFIAS 2.pptx"><img src="file:///C|/Users/yesen/Desktop/TODO/Nueva carpeta/Imagenes/diapos.png" alt="" width="128" height="122" /></a> Aprendido</p>
+  <p>&nbsp;</p>
+  <p>&nbsp;</p>
+</div>
+<div id="apDiv7"><a href="https://drive.google.com/file/d/1Y8MHgsWzxhubqCQ9W-G-paizs0nMGAQT/view?usp=sharing"><img src="capturafauna.png" width="624" height="319" /></a></div>
+<div id="apDiv8"><a href="audio-1.pdf"><img src="file.png" width="118" height="120" /></a></div>
+<div id="apDiv10"><a href="imgencorel.docx"><img src="file.png" alt="" width="118" height="120" /></a></div>
+<div id="apDiv11">
+  <table width="762" height="836" border="1">
+    <tr>
+      <td width="311" height="62">1. Realizar un circulo</td>
+      <td width="56"><a href="circulo.pdf"><img src="image.png" width="68" height="58" /></a></td>
+      <td width="309">9. Mezcladores</td>
+      <td width="58"><a href="Mezcladores.pdf"><img src="image.png" alt="" width="68" height="58" /></a></td>
+    </tr>
+    <tr>
+      <td>2.Escalado</td>
+      <td><a href="esca.png"><img src="image.png" alt="" width="68" height="58" /></a></td>
+      <td>10. Rectangulo degradado</td>
+      <td><a href="rectangulo degradado radial.pdf"><img src="image.png" alt="" width="68" height="58" /></a></td>
+    </tr>
+    <tr>
+      <td>3. Cuadros</td>
+      <td><a href="cuadross.pdf"><img src="image.png" alt="" width="68" height="58" /></a></td>
+      <td>11. Relleno degradado</td>
+      <td><a href="relleno degradado.pdf"><img src="image.png" alt="" width="68" height="58" /></a></td>
+    </tr>
+    <tr>
+      <td>4. Recorte, dar forma</td>
+      <td><a href="dar forma-recorte.pdf"><img src="image.png" alt="" width="68" height="58" /></a></td>
+      <td>12. Soldar</td>
+      <td><a href="Soldar.pdf"><img src="image.png" alt="" width="68" height="58" /></a></td>
+    </tr>
+    <tr>
+      <td>5. interseccion</td>
+      <td><a href="Interseccion.pdf"><img src="image.png" alt="" width="68" height="58" /></a></td>
+      <td>13. Alinear objetos</td>
+      <td><a href="alineae5.png"><img src="image.png" alt="" width="68" height="58" /></a></td>
+    </tr>
+    <tr>
+      <td>6. Espaciado</td>
+      <td><a href="espaciado.pdf"><img src="image.png" alt="" width="68" height="58" /></a></td>
+      <td>19.Aplicar estruccion</td>
+      <td><img src="image.png" alt="" width="68" height="58" /></td>
+    </tr>
+    <tr>
+      <td>7. Duplicar objeto</td>
+      <td><a href="mediosartiscispo.png"><img src="image.png" alt="" width="68" height="58" /></a></td>
+      <td>15.Distribuir objetos</td>
+      <td><a href="distribuir2.png"><img src="image.png" alt="" width="68" height="58" /></a></td>
+    </tr>
+    <tr>
+      <td>8. Horuga</td>
+      <td><a href="horuga.pdf"><img src="image.png" alt="" width="68" height="58" /></a></td>
+      <td>16. Mano alzada</td>
+      <td><a href="corazon2.png"><img src="image.png" alt="" width="68" height="58" /></a></td>
+    </tr>
+    <tr>
+      <td>17. Medios artisticos</td>
+      <td><a href="mediosartiscispo2.png"><img src="image.png" alt="" width="68" height="58" /></a></td>
+      <td>20.Aplicar perspectiva</td>
+      <td><a href="perspectiva.png"><img src="image.png" alt="" width="68" height="58" /></a></td>
+    </tr>
+    <tr>
+      <td>18.Diseñar con nodos</td>
+      <td><a href="bezeir3.png"><img src="image.png" alt="" width="68" height="58" /></a></td>
+      <td>Aplicar Powerclip</td>
+      <td><a href="púzzle.png"><img src="image.png" alt="" width="68" height="58" /></a></td>
+    </tr>
+  </table>
+</div>
+<div id="apDiv12"><a href="https://drive.google.com/file/d/15UvxX7fvS7taxSnUGsa_HxEPhvXIjIz7/view?usp=drivesdk"><img src="capturavideo.png" width="723" height="352" /></a></div>
+<div id="apDiv13"><a href="evaluacion.sb2"><img src="ACUARIO.png" width="325" height="385" /></a></div>
+<div id="apDiv14"><a href="desierto (1).sb2"><img src="DESIERTO.png" width="341" height="391" /></a></div>
+<div id="apDiv15"><a href="COMIDA (1).sb3"><img src="COMIDA.png" width="343" height="381" /></a></div>
+<div id="apDiv16">
+  <p><img src="7yc (1).png" width="325" height="323" /></p>
+  <p><a href="_CONAPP_9058345-3.apk">¡CLIC AQUI!</a></p>
+</div>
+<div id="apDiv17">
+  <p><img src="esca.png" width="208" height="195" /></p>
+  <p>¡Escanea aqui!</p>
+</div>
+<div class="container">
+  <div style="background-color:#78c19d"class="header">
+    <p>&nbsp;</p>
+    <p>"PORTAFOLIO DE EVIDENCIAS" <hr><b>
+    <ul onmouseover="MM_swapImage('img1','','file:///C|/Users/yesen/Desktop/TODO/Nueva carpeta/Imagenes/1.png','img5','','file:///C|/Users/yesen/Desktop/TODO/Nueva carpeta/Imagenes/1.png',1);MM_swapImage('img5','','file:///C|/Users/yesen/Desktop/TODO/Nueva carpeta/Imagenes/2.png',1);MM_swapImage('img5','','file:///C|/Users/yesen/Desktop/TODO/Nueva carpeta/Imagenes/3.png',1);MM_swapImage('img5','','file:///C|/Users/yesen/Desktop/TODO/Nueva carpeta/Imagenes/4.jpeg',1)">
+      <li>
+        <h3>Ruiz Toledo Yesenia
+          </hr>
+          <strong></strong></h3>
+      </li>
+    </ul>
+    <hr>
+    <b>
+    <p class="fltlft">Soporte y mantenimiento de equipos de computo<b> Grupo:605  <b> 4 Junio del 2019 <b></p>
+    <p class="header">Tratamiento digital de imagen y audio
+      </hr>
+    </p>
+    </p>
+    <p>&nbsp;</p> 
+  <!-- end .header --></div>
+  <div style="background-color:inherit" class="content">
+    <h1>Actividad #1: Digitalizacion de fotografias y dibujos.</h1>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>ACTIVIDAD #2: Propiedades que influyen en una fotografia.</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>ACTIVIDAD #3: Video de tema &quot;FAUNA&quot;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>ACTIVIDAD #4: Tipos de audio</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>ACTIVIDAD #5: Juegos SCRATCH</p>
+    <p><img src="15457.jpg" width="808" height="227" /></p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>ACTIVIDAD #6: Pantalla COREL  </p>
+    <p>&nbsp;</p>
+    <div id="apDiv2"></div>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>ACTIVIDAD #7: Ejercicios de COREL</p>
+    <p>&nbsp;</p>
+    <p>&nbsp; </p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>ACTIVIDAD #8: Video tema libre.</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>ACTIVIDAD #9: Aplicación</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <p>&nbsp;</p>
+    <!-- end .content --></div>
+  <div style="background-color:#78c19d" class="footer">
+    <p>GRACIAS</p>
+    <!-- end .footer --></div>
+<!-- end .container --></div>
+</body>
+</html>
